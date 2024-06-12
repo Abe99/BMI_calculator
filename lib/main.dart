@@ -2,6 +2,7 @@
 // which has inputPage() as a home page
 
 import 'package:flutter/material.dart';
+import 'input_page.dart';
 
 void main() {
   runApp(BMICalculator());
@@ -13,34 +14,17 @@ class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF17111b),
+        scaffoldBackgroundColor: Color(0xFF17111b),
+      ),
       home: inputPage(),
     );
   }
 }
 
-class inputPage extends StatefulWidget {
-  const inputPage({super.key});
 
-  @override
-  State<inputPage> createState() => _inputPageState();
-}
+  
 
-class _inputPageState extends State<inputPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
-      ),
-      body: Center(
-        child: Text('Main text'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('add');
-        },
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
+// TODO: create a new class called inputPage in input_page.dart
