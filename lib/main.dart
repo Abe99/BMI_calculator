@@ -4,27 +4,22 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
 
-void main() {
+void main(){
   runApp(BMICalculator());
 }
-
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF17111b),
-        scaffoldBackgroundColor: Color(0xFF17111b),
-      ),
+    return  MaterialApp(
+      theme: ThemeData.dark(),
       home: inputPage(),
+      debugShowCheckedModeBanner: true,
     );
   }
 }
 
 
-  
 
 // TODO: create a new class called inputPage in input_page.dart
