@@ -1,11 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF21223A);
-const inactiveCardColor = Color(0xFF232A98);
-const bottomContainerColor = Color(0xFFD20138);
+import 'reusable_card.dart';
 
 class inputPage extends StatefulWidget {
   const inputPage({super.key});
@@ -26,80 +22,38 @@ class _inputPageState extends State<inputPage> {
               fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20.0),
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                        color: inactiveCardColor,
-                        borderRadius: BorderRadius.circular(10.0)),
-                  ),
+                  child: ReusableCard(inactiveCardColor),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                      color: inactiveCardColor,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: ReusableCard(inactiveCardColor),
                 ),
               ],
             ),
             SizedBox(
               height: 20.0,
             ),
-            Container(
-              height: 200.0,
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: inactiveCardColor,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
+            ReusableCard(inactiveCardColor),
             SizedBox(
               height: 20.0,
             ),
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                      color: inactiveCardColor,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: ReusableCard(inactiveCardColor),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                      color: inactiveCardColor,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: ReusableCard(inactiveCardColor),
                 )
               ],
             ),
             SizedBox(
               height: 20.0,
             ),
-            Container(
-              height: bottomContainerHeight,
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: bottomContainerColor,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            )
+        ReusableCard(bottomContainerColor)
           ],
         ));
   }
