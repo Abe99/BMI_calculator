@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'input_page.dart';
+import 'package:ionicons/ionicons.dart';
+
 
 void main(){
   runApp(BMICalculator());
