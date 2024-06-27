@@ -3,7 +3,12 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+   ResultsPage({required this.bmiResult,required this.resultText,required this.getInterpretation});
+   final String bmiResult;
+   final String resultText;
+   final String getInterpretation;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             child: Container(
               child: Text(
-                'OVERWEIGHT',
+                resultText.toUpperCase(),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -35,7 +40,7 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             child: Container(
               child: Text(
-                '26.7',
+                bmiResult,
                 style: TextStyle(fontSize: 100),
               ),
             ),
@@ -43,7 +48,7 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             child: Container(
               child: Text(
-                'You have a higher than normal body weight. Try to exercise more.',
+                getInterpretation,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20,),
               ),
